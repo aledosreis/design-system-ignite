@@ -1,11 +1,19 @@
 import type { StoryObj, Meta } from '@storybook/react'
 import { Box, BoxProps, Text } from '@ignite-ui/react'
 
+// @ts-expect-error(-> type: null for not allow change properties on storybook)
 export default {
   title: 'Surfaces/Box',
   component: Box,
   args: {
     children: <Text>Testando o elemento Box</Text>,
+  },
+  argTypes: {
+    children: {
+      control: {
+        type: null,
+      },
+    },
   },
 } as Meta<BoxProps>
 
